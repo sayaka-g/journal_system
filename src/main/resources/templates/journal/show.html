@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View Journal</title>
+</head>
+	<body>
+	    <h1>Journal Details</h1>
+		<a th:href="@{/journal/edit/{id}(id=${journal.id})}">Edit</a>
+	    <p>ID: <span th:text="${journal.id}"></span></p>
+	    <p>Date: <span th:text="${journal.date}"></span></p>
+	    <p>Title: <span th:text="${journal.title}"></span></p>
+		<p>Content: <span th:text="${journal.content}"></span></p>
+	    <a href="/journal/index">Back to List</a>
+	</body>
+</html>

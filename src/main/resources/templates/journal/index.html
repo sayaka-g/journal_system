@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Journal List</title>
+</head>
+<body>
+	<h1>Journal List</h1>
+	    
+	    <table border="1">
+	        <thead>
+	            <tr>
+	                <th>ID</th>
+	                <th>Date</th>
+	                <th>Title</th>
+	                <th>Content</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr th:each="journal : ${journals}">
+					<td>
+		                <a th:href="@{/journal/show/{id}(id=${journal.id})}" th:text="${journal.id}"></a>
+		            </td>
+	                <td th:text="${journal.date}"></td>
+	                <td th:text="${journal.title}"></td>
+	                <td th:text="${journal.content}"></td>
+	            </tr>
+	        </tbody>
+	    </table>
+
+	    <a th:href="@{/journal/new}">Register a New Journal</a>
+</body>
+</html>
